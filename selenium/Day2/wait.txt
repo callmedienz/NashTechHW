@@ -1,0 +1,41 @@
+* Implicit wait : 
+- Provide default wait for each sequence steps in test script  -> the next step will be excuted after the wait time of the previous test
+- advantage : easy to applied 
+- disadvantage: excution time increased 
+
+*Explicit wait :
+- Explicit Wait is applied in a spectific case instead of whole script
+- Explicit wait stop script excution until a specific satisfied or maximum time reached
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+• Wait for an element is displayed
+
+        public IWebElement ReturnWebElement(By by)
+        {
+            IWebElement e = _driver.FindElement(by);
+            _wait.Until(SeleniumExtras.WaitHelpers.
+                ExpectedConditions.ElementIsVisible(by));
+            return e;
+        }
+
+• Wait for an element is clickable
+
+
+        public IWebElement ReturnWebElement(By by)
+        {
+            IWebElement e = _driver.FindElement(by);
+		_wait.Until(SeleniumExtras.WaitHelpers.
+   			 ExpectedConditions.ElementToBeClickable(by));
+		return e;
+        }
+
+• Wait for an element is selected
+
+        public IWebElement ReturnWebElement(By by)
+        {
+            IWebElement e = _driver.FindElement(by);
+		_wait.Until(SeleniumExtras.WaitHelpers.
+    			ExpectedConditions.ElementToBeSelected(by));
+		return e;
+        }
