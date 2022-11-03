@@ -1,0 +1,5 @@
+C:\Users\Precision 5510\source\repos\CoreProject\CoreProject\obj\Debug\net6.0\CoreProject.csproj.AssemblyReference.cache
+C:\Users\Precision 5510\source\repos\CoreProject\CoreProject\obj\Debug\net6.0\CoreProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Precision 5510\source\repos\CoreProject\CoreProject\obj\Debug\net6.0\CoreProject.AssemblyInfoInputs.cache
+C:\Users\Precision 5510\source\repos\CoreProject\CoreProject\obj\Debug\net6.0\CoreProject.AssemblyInfo.cs
+C:\Users\Precision 5510\source\repos\CoreProject\CoreProject\obj\Debug\net6.0\CoreProject.csproj.CoreCompileInputs.cache

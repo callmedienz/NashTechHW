@@ -31,7 +31,7 @@ namespace CoreProject.DriverCore
         public IWebElement FindElementByXPath(string locator)
         {
             IWebElement e = driver.FindElement(byXPath(locator));
-            HighlightElement(e);
+            HighlightElement((IWebDriver)e);
             return e;
         }
         public IList<IWebElement> FindElementsByXPath(string locator)
@@ -49,7 +49,7 @@ namespace CoreProject.DriverCore
         {
             try
             {
-                HighlightElement(e);
+                HighlightElement((IWebDriver)e);
                 e.Click();
                 TestContext.Write("click into element " + e.ToString() + "passed");
             }
@@ -115,7 +115,7 @@ namespace CoreProject.DriverCore
             }
         }
         // action get screenshot
-        public void Screenshoot()
+        public void Screenshot()
         {
             try
             {

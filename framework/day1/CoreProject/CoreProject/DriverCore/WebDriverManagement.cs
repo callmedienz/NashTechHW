@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using AutomationFramework.Config;
 using System;
 using System.Collections.Generic;
 using System.Linq;

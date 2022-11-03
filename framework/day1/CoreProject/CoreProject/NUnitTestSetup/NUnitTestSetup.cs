@@ -35,14 +35,13 @@ namespace CoreProject.NUnitTestSetup
             else if (testStatus.Equals(TestStatus.Failed))
             {
                 TestContext.WriteLine("Failed");
-                driverBaseAction.Screenshoot();
+                driverBaseAction.Screenshot();
             }
         }
 
         [Test]
         public void UserCanSearchVideos()
         {
-
         }
         
         public int? GetRandomNumber()

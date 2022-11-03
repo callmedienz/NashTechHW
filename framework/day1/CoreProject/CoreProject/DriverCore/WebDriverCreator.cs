@@ -13,7 +13,7 @@ namespace CoreProject.DriverCore
 {
     public class WebDriverCreator
     {
-        public static IWebDriver CreateLocalDriver(string Driver, int ScreenWidth, int ScreenHeight)
+        public static IWebDriver CreateLocalDriver(string Browser, int ScreenWidth, int ScreenHeight)
         {
             IWebDriver? Driver = null;
             if (Browser.SequenceEqual("firefox"))
@@ -34,12 +34,12 @@ namespace CoreProject.DriverCore
             return Driver;
         }
 
-        public static IWebDriver CreateBroswerStackDriver(string Driver, int ScreenWidth, int ScreenHeight)
+        public static IWebDriver CreateBroswerStackDriver(string Browser, int ScreenWidth, int ScreenHeight)
         {
-            IWebDriver? driver = null;
+            IWebDriver? Driver = null;
             if (Browser.SequenceEqual("firefox"))
             {
-                river = new FirefoxDriver();
+                Driver = new FirefoxDriver();
             }
             else if (Browser.SequenceEqual("chrome"))
             {
