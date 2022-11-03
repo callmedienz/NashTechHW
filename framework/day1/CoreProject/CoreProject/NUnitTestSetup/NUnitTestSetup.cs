@@ -43,7 +43,7 @@ namespace CoreProject.NUnitTestSetup
         public void UserCanSearchVideos()
         {
         }
-        
+
         public int? GetRandomNumber()
         {
             return null;

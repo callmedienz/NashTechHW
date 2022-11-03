@@ -10,7 +10,7 @@ namespace CoreProject.DriverCore
 {
     public class WebDriverManagement
     {
-        private static AsyncLocal<IWebDriver> driver = new AsyncLocal<IWebDriver>();
+        private static AsyncLocal<IWebDriver> Driver = new AsyncLocal<IWebDriver>();
 
         public static void InitDriver(string Browser, int Width, int Height)
         { 
@@ -22,15 +22,15 @@ namespace CoreProject.DriverCore
         }
         public static IWebDriver GetCurrentDriver()
         {
-            return driver.Value;
+            return Driver.Value;
         }
 
-        public static CloseDriver()
+        public static void CloseDriver()
         {
-            if (driver.Value == null)
+            if (Driver.Value == null)
             {
-                driver.Value.Quit();
-                driver.Value.Dispose();
+                Driver.Value.Quit();
+                Driver.Value.Dispose();
             }
         }
     }

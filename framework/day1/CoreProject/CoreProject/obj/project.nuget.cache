@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PVjcrj6r0k8NamesHvaqETBGwflj2WZJISyOF4II5BvUoNlpkOAlzSiphBTuMd6fBOc9GGYu3c2iDmtgpRyMww==",
+  "dgSpecHash": "AQprlRbVot4/UFn3isOJftjJTGrhcpmh3S1/CPCX5bp+QeuC/wZrTfS7YSjfE0KN5gQwnjRhap87R4XGiTS0NA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Precision 5510\\source\\repos\\CoreProject\\CoreProject\\CoreProject.csproj",
+  "projectFilePath": "C:\\Users\\Precision 5510\\Documents\\GitHub\\NashTechHW\\framework\\day1\\CoreProject\\CoreProject\\CoreProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Precision 5510\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\Precision 5510\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",

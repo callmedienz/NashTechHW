@@ -3,7 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreProject", "CoreProject\CoreProject.csproj", "{6DA260DA-7670-4A10-8A93-2107F17A106C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreProject", "CoreProject\CoreProject.csproj", "{6DA260DA-7670-4A10-8A93-2107F17A106C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FirstTest", "FirstTest", "{B5FA362E-D8D1-45E6-9132-67B022329790}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Page", "Page", "{C14DF42D-5AAE-4990-8ADE-23D67B06CCE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{6E4596D5-D2AC-4E09-92F8-E501AFC810B4}"
+	ProjectSection(SolutionItems) = preProject
+		TestSetUp.cs = TestSetUp.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SetUp", "SetUp", "{5CCF35E5-017F-4466-8917-87FE35E209E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +29,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C14DF42D-5AAE-4990-8ADE-23D67B06CCE4} = {B5FA362E-D8D1-45E6-9132-67B022329790}
+		{6E4596D5-D2AC-4E09-92F8-E501AFC810B4} = {B5FA362E-D8D1-45E6-9132-67B022329790}
+		{5CCF35E5-017F-4466-8917-87FE35E209E1} = {B5FA362E-D8D1-45E6-9132-67B022329790}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ADA82F4F-A7E0-48D1-99E2-701BEB1EFF9B}

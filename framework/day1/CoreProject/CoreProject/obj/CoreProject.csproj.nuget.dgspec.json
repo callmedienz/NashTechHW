@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Precision 5510\\source\\repos\\CoreProject\\CoreProject\\CoreProject.csproj": {}
+    "C:\\Users\\Precision 5510\\Documents\\GitHub\\NashTechHW\\framework\\day1\\CoreProject\\CoreProject\\CoreProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Precision 5510\\source\\repos\\CoreProject\\CoreProject\\CoreProject.csproj": {
+    "C:\\Users\\Precision 5510\\Documents\\GitHub\\NashTechHW\\framework\\day1\\CoreProject\\CoreProject\\CoreProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Precision 5510\\source\\repos\\CoreProject\\CoreProject\\CoreProject.csproj",
+        "projectUniqueName": "C:\\Users\\Precision 5510\\Documents\\GitHub\\NashTechHW\\framework\\day1\\CoreProject\\CoreProject\\CoreProject.csproj",
         "projectName": "CoreProject",
-        "projectPath": "C:\\Users\\Precision 5510\\source\\repos\\CoreProject\\CoreProject\\CoreProject.csproj",
+        "projectPath": "C:\\Users\\Precision 5510\\Documents\\GitHub\\NashTechHW\\framework\\day1\\CoreProject\\CoreProject\\CoreProject.csproj",
         "packagesPath": "C:\\Users\\Precision 5510\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Precision 5510\\source\\repos\\CoreProject\\CoreProject\\obj\\",
+        "outputPath": "C:\\Users\\Precision 5510\\Documents\\GitHub\\NashTechHW\\framework\\day1\\CoreProject\\CoreProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Precision 5510\\AppData\\Roaming\\NuGet\\NuGet.Config",
