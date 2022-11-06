@@ -1,141 +1,95 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Safari;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NUnit.Framework;
 
-namespace CoreProject.DriverCore
+namespace CoreFramework.DriverCore
 {
     public class WebDriverAction
     {
         public IWebDriver driver;
-        public WebDriverWait explicitWait;
-
         public WebDriverAction(IWebDriver driver)
         {
             this.driver = driver;
         }
-
-        public By byXPath(string locator)
+        public By ByXpath(string locator)
         {
-            return By.XPath(locator);
+            return ByXpath(locator);
         }
-
-        public string GetTitle()
+        public string getTitle()
         {
             return driver.Title;
         }
-        public IWebElement FindElementByXPath(string locator)
+        public IWebElement FindElementByXpath(string locator)
         {
-            IWebElement e = driver.FindElement(byXPath(locator));
-            HighlightElement((IWebDriver)e);
+            IWebElement e = driver.FindElement(ByXpath(locator));
+            hightlightElement(e);
             return e;
         }
-        public IList<IWebElement> FindElementsByXPath(string locator)
+        public IList<IWebElement> FindElementsByXpath(string locator)
         {
-            return driver.FindElements(byXPath(locator));
+            return driver.FindElements(ByXpath(locator));
         }
-        public IWebDriver HighlightElement (IWebDriver element)
+        public IWebElement hightlightElement(IWebElement element)
         {
-            IJavaScriptExecutor jse =(IJavaScriptExecutor)driver;
-
-            jse.ExecuteScript("arguments [0].style.border='2px solid red'", element);
+            IJavaScriptExecutor jse = (IJavaScriptExecutor)driver;
+            jse.ExecuteScript("arguments[0].style.border='2px solid red'", element);
             return element;
         }
         public void Click(IWebElement e)
         {
             try
             {
-                HighlightElement((IWebDriver)e);
+                hightlightElement(e);
                 e.Click();
-                TestContext.Write("click into element " + e.ToString() + "passed");
+                TestContext.Write("click into element" + e.ToString() + "passed");
             }
-            catch (Exception err)
+            catch (Exception ex)
             {
-                TestContext.Write("click into element " + e.ToString() + "failed");
-                throw err;
+                TestContext.Write("click into element" + e.ToString() + "failed");
+                throw ex;
             }
         }
         public void Click(string locator)
         {
             try
             {
-                FindElementByXPath(locator).Click();
-                TestContext.Write("click into element " + locator + "passed");
-            }
-            catch (Exception err)
-            {
-                TestContext.Write("click into element " + locator + "failed");
-                throw err;
-            }
-        }
-        public void SendKeys_(IWebElement e,string key)
-        {
-            try
-            {
-                e.SendKeys(key);
-                TestContext.Write("send keys into element " + e.ToString() + "passed");
-            }
-            catch (Exception err)
-            {
-                TestContext.Write("send key into element " + e.ToString() + "failed");
-                throw err;
-            }
-        }
-        public void SendKeys_(string locator, string key)
-        {
-            try
-            {
-                FindElementByXPath(locator).SendKeys(key);
-                TestContext.Write("send keys into element " + locator + "passed");
-            }
-            catch (Exception err)
-            {
-                TestContext.Write("send key into element " + locator + "failed");
-                throw err;
-            }
-        }
-        // action select option
-        public void SelectOption(String locator, String key)
-        {
-            try
-            {
-                IWebElement mySelectOption = FindElementByXPath(locator);
-                SelectElement dropdown = new SelectElement(mySelectOption);
-                dropdown.SelectByText(key);
-                TestContext.WriteLine("Select element " + locator + " successfuly with " + key);
+                FindElementByXpath(locator).Click();
+                TestContext.Write("click into element" + locator.ToString() + "passed");
             }
             catch (Exception ex)
             {
-                TestContext.WriteLine("Select element " + locator + " failed with " + key);
+                TestContext.Write("click into element" + locator.ToString() + "failed");
                 throw ex;
             }
-        }
-        // action get screenshot
-        public void Screenshot()
-        {
-            try
-            {
 
-                Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
-                ss.SaveAsFile("Test.jpg", ScreenshotImageFormat.Jpeg);
-                TestContext.WriteLine("Take screen shot successfully");
+        }
+        public void Sendkey_(String locator, String key)
+        {
+            try
+            {
+                FindElementByXpath(locator).SendKeys(key);
+                TestContext.Write("sendkey into element" + locator + "passed");
+
             }
             catch (Exception ex)
             {
-                TestContext.WriteLine("Take screen shot failed");
+                TestContext.Write("sendkey into element" + locator + "failed");
                 throw ex;
             }
         }
-        public IWebElement highlightElement(IWebElement element)
-        {
-            IJavaScriptExecutor jse = (IJavaScriptExecutor)driver;
-            jse.ExecuteScript("arguments[0].style.border='2px solid red'", element);
-            return element;
-        }
+
     }
 }
-

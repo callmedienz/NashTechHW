@@ -9,32 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoreProject.DriverCore
+namespace CoreFramework.DriverCore
 {
-    public class WebDriverCreator
+    internal class WebDriverCreator
     {
-        public static IWebDriver CreateLocalDriver(string Browser, int ScreenWidth, int ScreenHeight)
-        {
-            IWebDriver? Driver = null;
-            if (Browser.SequenceEqual("firefox"))
-            {
-                Driver = new FirefoxDriver(); 
-            }
-            else if (Browser.SequenceEqual("chrome"))
-            {
-                Driver = new ChromeDriver();
-            }
-            else if (Browser.SequenceEqual("safari"))
-            {
-                Driver = new SafariDriver();
-            }
-            Driver.Manage().Window.Maximize();
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            Driver.Manage().Window.Size = new Size(ScreenWidth, ScreenHeight);
-            return Driver;
-        }
-
-        public static IWebDriver CreateBroswerStackDriver(string Browser, int ScreenWidth, int ScreenHeight)
+        public static IWebDriver CreateLocalDriver(string Browser, int ScreenWidth, int ScreenHight)
         {
             IWebDriver? Driver = null;
             if (Browser.SequenceEqual("firefox"))
@@ -51,7 +30,27 @@ namespace CoreProject.DriverCore
             }
             Driver.Manage().Window.Maximize();
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            Driver.Manage().Window.Size = new Size(ScreenWidth, ScreenHeight);
+            Driver.Manage().Window.Size = new Size(ScreenWidth, ScreenHight);
+            return Driver;
+        }
+        public static IWebDriver CreateBrowserstackDriver(string Browser, int ScreenWidth, int ScreenHight)
+        {
+            IWebDriver? Driver = null;
+            if (Browser.SequenceEqual("firefox"))
+            {
+                Driver = new FirefoxDriver();
+            }
+            else if (Browser.SequenceEqual("chrome"))
+            {
+                Driver = new ChromeDriver();
+            }
+            else if (Browser.SequenceEqual("safari"))
+            {
+                Driver = new SafariDriver();
+            }
+            Driver.Manage().Window.Maximize();
+            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            Driver.Manage().Window.Size = new Size(ScreenWidth, ScreenHight);
             return Driver;
         }
     }
