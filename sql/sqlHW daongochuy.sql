@@ -45,21 +45,22 @@ Select distinct employee_id, last_name, salary
 from [dbo].[employees] 
 where salary > (select avg(salary) from [dbo].[employees])  
 union
-select e.employee_id, e.last_name, e.salary
-from employees e
-join departments d on e.department_id = d.department_id
-where e.last_name like '%u%'
+select employee_id, last_name
+from employees 
+Where department_id in (select department_id from employees where last_name like '%u%')
+
+
 
 --bai 8
-select ROUND(MAX(salary),0) as Maximum, 
-ROUND(MIN(salary),0) as Minimum, 
-ROUND(SUM(salary),0) as Sum,
-ROUND(AVG(salary),0) as Average
+select cast(MAX(salary)as numeric) as Maximum, 
+cast(MIN(salary)as numeric) as Minimum, 
+cast(SUM(salary)as numeric) as Sum,
+cast(AVG(salary)as numeric) as Average
 from employees
 
 --bai9
 SELECT Upper(last_name) as "Last Name",
-LEN(first_name) as "Length"
+LEN(last_name) as "Length"
 FROM employees
 WHERE last_name LIKE 'J%'
 OR last_name LIKE 'M%'
@@ -70,14 +71,11 @@ ORDER BY last_name ;
 select employee_id, 
 last_name, 
 salary, 
-ROUND(salary*(1+15.5/100), 0) AS "New Salary"
+Cast(salary*(1+15.5/100) as numeric(10,0)) AS "New Salary"
 from employees;
 
 --bai 11
-select  last_name as Column1, 
-CAST(department_id as varchar(50)) as Column2 
-from employees
-union all
-select CAST(department_id as varchar(50)), department_name from departments;
+select last_name, department_id null as department_name from employees
+union
 
 --bai 12

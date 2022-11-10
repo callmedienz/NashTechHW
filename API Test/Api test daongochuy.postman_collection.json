@@ -1,0 +1,362 @@
+{
+	"info": {
+		"_postman_id": "c4199cf7-1584-4bf9-b6f3-6b1c27f24de3",
+		"name": "Api test daongochuy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17090930"
+	},
+	"item": [
+		{
+			"name": "GET /todo (404) not plural",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function() {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/todos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /todo/{id} (200)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Resquest return matched\", function() {\r",
+							"    pm.response.to.have.status(200)\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/todos/1645",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos",
+						"1645"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /todos/{id} (404)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function() {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"pm.test(\"Resquest return matched\", function() {\r",
+							"    pm.expect(pm.response.text()).to.include(\"instance not found\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/todos/900",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos",
+						"900"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HEAD /todos (200)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Content-type presented\",function(){\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "HEAD",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/todos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /todos (201)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Post Success \",function(){\r",
+							"    pm.expect(pm.response.text()).to.include(\"aloalo1234\");\r",
+							"});\r",
+							"pm.test(\"Status code is 201 \",function(){\r",
+							"    pm.response.to.have.status(201);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\" : \"aloalo1234\",\r\n    \"doneStatus\" : true\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/todos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /todos (200) ?filter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Get Success \",function(){\r",
+							"    pm.expect(pm.response.text()).to.include(\"true\");\r",
+							"});\r",
+							"pm.test(\"Status code is 200 \",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/todos?doneStatus=true",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos"
+					],
+					"query": [
+						{
+							"key": "doneStatus",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /todos (400) doneStatus",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Post Unsuccess \",function(){\r",
+							"    pm.expect(pm.response.text()).to.include(\"doneStatus should be BOOLEAN\");\r",
+							"});\r",
+							"pm.test(\"Status code is 400 \",function(){\r",
+							"    pm.response.to.have.status(400);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n     \"title\" : \"aloalo1234\",\r\n    \"doneStatus\" : \"hihi\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/todos?doneStatus=true",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos"
+					],
+					"query": [
+						{
+							"key": "doneStatus",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /todos/{id} (200)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Post Success \",function(){\r",
+							"    pm.expect(pm.response.text()).to.include(\"daongochuy\");\r",
+							"});\r",
+							"pm.test(\"Status code is 200 \",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\" : \"daongochuy\",\r\n    \"doneStatus\" : \"true\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/todos/1645",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos",
+						"1645"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /todos/{id} (200)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 \",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/todos/1645",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos",
+						"1645"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /todos/{id} (200)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 \",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/todos/1647",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos",
+						"1647"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

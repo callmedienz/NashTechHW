@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoreFramework.DriverCore
+namespace CoreProject.DriverCore
 {
     internal class WebDriverCreator
     {

@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 
 
 
-namespace CoreFramework.DriverCore
+namespace CoreProject.DriverCore
 {
     internal class WebDriverManager_
     {

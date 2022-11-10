@@ -14,8 +14,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using CoreProject.Reporter;
 
-namespace CoreFramework.DriverCore
+namespace CoreProject.DriverCore
 {
     public class WebDriverAction
     {
@@ -67,28 +68,78 @@ namespace CoreFramework.DriverCore
             try
             {
                 FindElementByXpath(locator).Click();
-                TestContext.Write("click into element" + locator.ToString() + "passed");
+                HtmlReport.Pass("click into element" + locator.ToString() + "passed");
             }
             catch (Exception ex)
             {
-                TestContext.Write("click into element" + locator.ToString() + "failed");
+                HtmlReport.Fail("click into element" + locator.ToString() + "failed");
                 throw ex;
             }
 
+        }
+        public void SendKeys_(IWebElement e, string key)
+        {
+            try
+            {
+                e.SendKeys(key);
+                HtmlReport.Pass("SendKey into element " + e.ToString() + "passed");
+
+            }
+            catch (Exception ex)
+            {
+                HtmlReport.Fail("SendKey into element " + e.ToString() + "failed");
+                throw ex;
+            }
         }
         public void Sendkey_(String locator, String key)
         {
             try
             {
                 FindElementByXpath(locator).SendKeys(key);
-                TestContext.Write("sendkey into element" + locator + "passed");
+                HtmlReport.Pass("sendkey into element" + locator + "passed");
 
             }
             catch (Exception ex)
             {
-                TestContext.Write("sendkey into element" + locator + "failed");
+                HtmlReport.Fail("sendkey into element" + locator + "failed");
                 throw ex;
             }
+        }
+        public string ScreenShot()
+        {
+            try
+            {
+                string path = HtmlReportDirectory.SCREENSHOT_PATH + ("/screenshot_" + DateTime.Now.ToString("yyyyMMddHHmmss")) + ".png";
+                var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+                screenshot.SaveAsFile(path, ScreenshotImageFormat.Png);
+                return path;
+            }catch (Exception ex)
+            {
+                HtmlReport.Fail("Take screenshot failed");
+                throw ex;
+            }
+        }
+        public void ScreenShootWhen404()
+        {
+            if(driver.Title.Contains("404"))
+            {
+                ScreenShot();
+                HtmlReport.Warning("Error 404");
+            }ScreenShot();
+        }
+        public void Back()
+        {
+            driver.Navigate().Back();
+        }
+        public void Forward()
+        {
+            driver.Navigate().Forward();
+        }
+
+        public String GetText(string locator)
+        {
+            string e = FindElementByXpath(locator).Text;
+            return e;
         }
 
     }

@@ -1,8 +1,10 @@
-﻿using CoreFramework.DriverCore;
+﻿using CoreProject.DriverCore;
+using CoreProject.Reporter;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using NUnit.Framework.Internal;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace CoreFramework.UnitTestSetup
 {
@@ -12,16 +14,20 @@ namespace CoreFramework.UnitTestSetup
         public IWebDriver? _driver;
         public WebDriverAction driverBaseAction;
         public WebDriverWait? _wait;
-        protected ExtentsReport? _extentsReport;
-        protected extnentsTest? _extnentsTest;
+
+        [OneTimeSetUp]
+        public void OneTimeSetUp()
+        {
+            HtmlReport.createTest(TestContext.CurrentContext.Test.ClassName);
+        }
 
         [SetUp]
         public void SetUp()
         {
+            HtmlReport.createNode(TestContext.CurrentContext.Test.ClassName, TestContext.CurrentContext.Test.Name);
             WebDriverManager_.InitDriver("chrome", 1920, 1080);
             _driver = WebDriverManager_.GerCurrentDriver();
-            driverBaseAction = new WebDriverAction(_driver);
-            _extnentsTest = _extentsReport.CreateTest($"{TestContext.CurrentContext.Test.Name}");
+           
         }
         [TearDown]
         public void TearDown()
@@ -36,7 +42,7 @@ namespace CoreFramework.UnitTestSetup
             {
                 TestContext.WriteLine("failed");
             }
-            _extentsReport.Flush();
+            HtmlReport.flush();
         }
     }
 }

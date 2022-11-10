@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using AventStack.ExtentReports;
 using NUnit.Framework.Interfaces;
 using NUnit.Framework.Internal;
 using RookiesTest.Page;
@@ -15,10 +16,18 @@ namespace RookiesTest.Test
     public class SimpleTest : RookiesNUnitTestSetUp
     {
         [Test]
-        public void UserCanSearchVideo()
+        public void simpleTest()
         {
-            LoginPage loginPage = new LoginPage(_driver);
-            loginPage.inputUserName("test");
+            SearchPage searchPage = new SearchPage(_driver);
+            ResultPage resultPage = new ResultPage(_driver);
+
+            searchPage.inputSearchKey("Selenium");
+            searchPage.getResultPage();
+
+            resultPage.verifySearchTitle("Selenium");
+            resultPage.clickOnFirstResult();
+            resultPage.verifyPageSearchBoxText("Search");
+
         }
     }
 }
