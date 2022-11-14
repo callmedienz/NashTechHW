@@ -86,7 +86,7 @@ namespace CoreProject.Reporter
             }
             return GetNode();
         }
-        public static void Pass(string des)
+        public static void Pass(string des, string v)
         {
             GetTest().Pass(MarkupHelper.CreateLabel(des, ExtentColor.Green));
         }

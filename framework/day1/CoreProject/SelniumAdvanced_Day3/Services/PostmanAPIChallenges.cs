@@ -1,5 +1,7 @@
 ﻿using CoreProject.DriverCore.APICore;
 using MongoDB.Bson.IO;
+using Newtonsoft.Json;
+using JsonConvert = Newtonsoft.Json.JsonConvert;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,6 +52,11 @@ namespace SelniumAdvanced_day3.Services
         public string req08_path = "/todos";
         public APIResponse req08()
         {
+            var reqObj = new Todo();
+            reqObj.Title = "aloalo1234";
+            reqObj.DoneStatus = true;
+            string requestBody = JsonConvert.SerializeObject(reqObj);
+
             APIResponse response = new APIRequest().
                    SetUrl("https://apichallenges.herokuapp.com" + req08_path)
                    .SendRequest();
@@ -61,6 +68,7 @@ namespace SelniumAdvanced_day3.Services
         {
             APIResponse response = new APIRequest().
                    SetUrl("https://apichallenges.herokuapp.com" + req09_path)
+                   .SetRequestParameter("doneStatus", "true")
                    .SendRequest();
             return response;
         }
@@ -68,8 +76,14 @@ namespace SelniumAdvanced_day3.Services
         public string req10_path = "/todos";
         public APIResponse req10()
         {
+            var reqObj = new Todo();
+            reqObj.Title = "aloalo1234";
+            reqObj.DoneStatus = true;
+            reqObj.Description = "request test";
+
             APIResponse response = new APIRequest().
                    SetUrl("https://apichallenges.herokuapp.com" + req10_path)
+                   .SetRequestParameter("doneStatus", "false")
                    .SendRequest();
             return response;
         }

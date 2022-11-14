@@ -1,0 +1,6 @@
+C:\Users\Precision 5510\Documents\GitHub\NashTechHW\framework\day1\CoreProject\SelniumAdvanced_Day3\bin\Debug\net6.0\CoverletSourceRootsMapping
+C:\Users\Precision 5510\Documents\GitHub\NashTechHW\framework\day1\CoreProject\SelniumAdvanced_Day3\obj\Debug\net6.0\SelniumAdvanced_day3.csproj.AssemblyReference.cache
+C:\Users\Precision 5510\Documents\GitHub\NashTechHW\framework\day1\CoreProject\SelniumAdvanced_Day3\obj\Debug\net6.0\SelniumAdvanced_day3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Precision 5510\Documents\GitHub\NashTechHW\framework\day1\CoreProject\SelniumAdvanced_Day3\obj\Debug\net6.0\SelniumAdvanced_day3.AssemblyInfoInputs.cache
+C:\Users\Precision 5510\Documents\GitHub\NashTechHW\framework\day1\CoreProject\SelniumAdvanced_Day3\obj\Debug\net6.0\SelniumAdvanced_day3.AssemblyInfo.cs
+C:\Users\Precision 5510\Documents\GitHub\NashTechHW\framework\day1\CoreProject\SelniumAdvanced_Day3\obj\Debug\net6.0\SelniumAdvanced_day3.csproj.CoreCompileInputs.cache

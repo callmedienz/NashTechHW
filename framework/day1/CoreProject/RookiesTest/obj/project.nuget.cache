@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DndVCu/6/p+Rt643JYFgkHN+hKYSQlIPuwHo4AoWQig36BgxE631mFeAj4rhSc/+OqDYbyBRtqRQ/J13Ou1HzA==",
+  "dgSpecHash": "L+77n6fCKysuXoJxoxcOl/gP6yHSWDxQSHGGfHM/LeGKiaDAW1pbzfHQ8JA6ja+W2MLq/pZWwPHr2d7POsU5Wg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Precision 5510\\Documents\\GitHub\\NashTechHW\\framework\\day1\\CoreProject\\RookiesTest\\RookiesTest.csproj",
   "expectedPackageFiles": [
@@ -101,8 +101,8 @@
     "C:\\Users\\Precision 5510\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\Precision 5510\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\Precision 5510\\.nuget\\packages\\selenium.chrome.webdriver\\85.0.0\\selenium.chrome.webdriver.85.0.0.nupkg.sha512",
-    "C:\\Users\\Precision 5510\\.nuget\\packages\\selenium.support\\4.5.1\\selenium.support.4.5.1.nupkg.sha512",
-    "C:\\Users\\Precision 5510\\.nuget\\packages\\selenium.webdriver\\4.5.1\\selenium.webdriver.4.5.1.nupkg.sha512",
+    "C:\\Users\\Precision 5510\\.nuget\\packages\\selenium.support\\4.6.0\\selenium.support.4.6.0.nupkg.sha512",
+    "C:\\Users\\Precision 5510\\.nuget\\packages\\selenium.webdriver\\4.6.0\\selenium.webdriver.4.6.0.nupkg.sha512",
     "C:\\Users\\Precision 5510\\.nuget\\packages\\selenium.webdriver.chromedriver\\107.0.5304.6200\\selenium.webdriver.chromedriver.107.0.5304.6200.nupkg.sha512",
     "C:\\Users\\Precision 5510\\.nuget\\packages\\sharpcompress\\0.23.0\\sharpcompress.0.23.0.nupkg.sha512",
     "C:\\Users\\Precision 5510\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
