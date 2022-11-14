@@ -5,7 +5,13 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreProject", "CoreProject\CoreProject.csproj", "{6DA260DA-7670-4A10-8A93-2107F17A106C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RookiesTest", "RookiesTest\RookiesTest.csproj", "{255EFB2B-2A8D-4536-8F95-EC9EB5DD76CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RookiesTest", "RookiesTest\RookiesTest.csproj", "{255EFB2B-2A8D-4536-8F95-EC9EB5DD76CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumAdvanced_day2", "SeleniumAdvanced_day2\SeleniumAdvanced_day2.csproj", "{7D810D26-C4AA-4F2A-A8D3-FE1956973F83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelniumAdvanced_Day3", "SelniumAdvanced_Day3\SelniumAdvanced_Day3.csproj", "{0FF15F7B-8787-432F-8426-5118E487B0B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumAdvanced_day4", "SeleniumAdvanced_day4\SeleniumAdvanced_day4.csproj", "{0C3D178A-2E35-4246-BF11-1AA862466A80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{255EFB2B-2A8D-4536-8F95-EC9EB5DD76CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{255EFB2B-2A8D-4536-8F95-EC9EB5DD76CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{255EFB2B-2A8D-4536-8F95-EC9EB5DD76CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D810D26-C4AA-4F2A-A8D3-FE1956973F83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D810D26-C4AA-4F2A-A8D3-FE1956973F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D810D26-C4AA-4F2A-A8D3-FE1956973F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D810D26-C4AA-4F2A-A8D3-FE1956973F83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FF15F7B-8787-432F-8426-5118E487B0B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF15F7B-8787-432F-8426-5118E487B0B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FF15F7B-8787-432F-8426-5118E487B0B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FF15F7B-8787-432F-8426-5118E487B0B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C3D178A-2E35-4246-BF11-1AA862466A80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C3D178A-2E35-4246-BF11-1AA862466A80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C3D178A-2E35-4246-BF11-1AA862466A80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C3D178A-2E35-4246-BF11-1AA862466A80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

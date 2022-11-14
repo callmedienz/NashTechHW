@@ -18,15 +18,18 @@ namespace RookiesTest.Test
         [Test]
         public void simpleTest()
         {
-            SearchPage searchPage = new SearchPage(_driver);
-            ResultPage resultPage = new ResultPage(_driver);
+            /*            SearchPage searchPage = new SearchPage(_driver);
+                        ResultPage resultPage = new ResultPage(_driver);
 
-            searchPage.inputSearchKey("Selenium");
-            searchPage.getResultPage();
+                        searchPage.inputSearchKey("Selenium");
+                        searchPage.getResultPage();
 
-            resultPage.verifySearchTitle("Selenium");
-            resultPage.clickOnFirstResult();
-            resultPage.verifyPageSearchBoxText("Search");
+                        resultPage.verifySearchTitle("Selenium");
+                        resultPage.clickOnFirstResult();
+                        resultPage.verifyPageSearchBoxText("Search");*/
+
+            LoginPage login = new LoginPage(_driver);
+            login.inputUserName("alo");
 
         }
     }

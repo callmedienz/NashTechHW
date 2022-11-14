@@ -1,5 +1,8 @@
 ﻿using AventStack.ExtentReports;
+using AventStack.ExtentReports.MarkupUtils;
 using AventStack.ExtentReports.Reporter;
+using CoreProject.DriverCore.APICore;
+using CoreProject.Reporter.ExtentMarkup;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -85,8 +88,7 @@ namespace CoreProject.Reporter
         }
         public static void Pass(string des)
         {
-            GetTest().Pass(des);
-            TestContext.WriteLine(des);
+            GetTest().Pass(MarkupHelper.CreateLabel(des, ExtentColor.Green));
         }
         public static void Fail(string des)
         {
@@ -117,6 +119,27 @@ namespace CoreProject.Reporter
         {
             GetTest().Skip(des);
             TestContext.WriteLine(des);
+        }
+        public static void MarkUpJson()
+        {
+            var json = "{'name':'daongochuy', dob:'17/03/2001', 'school':Greenwich}";
+            GetTest().Info(MarkupHelper.CreateCodeBlock(json, CodeLanguage.Json));
+        }
+
+        public static void MarkUpTable()
+        {
+            string[][] table = new string[][] { new string[]
+            { "ID", "Name", "Des" },
+            new string[]
+            { "01", "aloalo1234", "daongochuy" },
+            new string[]
+            { "02", "test api", "test content" }
+            };
+            GetTest().Info(MarkupHelper.CreateTable(table));
+        }
+        public static void CreateAPIRequestLog(APIRequest request, APIResponse response)
+        {
+            GetTest().Info(MarkupHelperPlus.CreateAPIRequestLog(request, response));
         }
 
     }
