@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RookiesTest", "RookiesTest\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumAdvanced_day2", "SeleniumAdvanced_day2\SeleniumAdvanced_day2.csproj", "{7D810D26-C4AA-4F2A-A8D3-FE1956973F83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelniumAdvanced_Day3", "SelniumAdvanced_Day3\SelniumAdvanced_Day3.csproj", "{0FF15F7B-8787-432F-8426-5118E487B0B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelniumAdvanced_day3", "SelniumAdvanced_Day3\SelniumAdvanced_day3.csproj", "{0FF15F7B-8787-432F-8426-5118E487B0B7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumAdvanced_day4", "SeleniumAdvanced_day4\SeleniumAdvanced_day4.csproj", "{0C3D178A-2E35-4246-BF11-1AA862466A80}"
 EndProject
